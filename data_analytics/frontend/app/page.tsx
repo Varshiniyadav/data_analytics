@@ -58,7 +58,7 @@ export default function OverviewPage() {
             <CartesianGrid strokeDasharray="3 3" stroke="#F1F5F9" />
             <XAxis dataKey="Year-Month" tick={{ fontSize: 11 }} stroke="#CBD5E1" />
             <YAxis tick={{ fontSize: 11 }} stroke="#CBD5E1" tickFormatter={(v) => `$${(v / 1000).toFixed(0)}k`} />
-            <Tooltip formatter={(v: number) => formatCurrency(v)} contentStyle={{ borderRadius: 8, border: '1px solid #E2E8F0', fontSize: 12 }} />
+            <Tooltip formatter={(v) => formatCurrency(Number(v))} contentStyle={{ borderRadius: 8, border: '1px solid #E2E8F0', fontSize: 12 }} />
             <Legend wrapperStyle={{ fontSize: 12 }} />
             <Line type="monotone" dataKey="Sales" stroke="#3B82F6" strokeWidth={2.5} dot={false} name="Revenue" />
             <Line type="monotone" dataKey="Profit" stroke="#10B981" strokeWidth={2.5} dot={false} name="Profit" />

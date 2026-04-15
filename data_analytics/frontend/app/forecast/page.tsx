@@ -102,7 +102,7 @@ export default function ForecastPage() {
             <XAxis dataKey="date" tick={{ fontSize: 11 }} stroke="#CBD5E1" />
             <YAxis tick={{ fontSize: 11 }} stroke="#CBD5E1" tickFormatter={(v) => `$${(v / 1000).toFixed(0)}k`} />
             <Tooltip
-              formatter={(v: number, name: string) => [formatCurrency(v), name]}
+              formatter={(v, name) => [formatCurrency(Number(v)), name]}
               contentStyle={{ borderRadius: 8, border: '1px solid #E2E8F0', fontSize: 12 }}
             />
             {lastHistoricalDate && (

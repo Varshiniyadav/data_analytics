@@ -56,7 +56,7 @@ export default function DiagnosisPage() {
               <CartesianGrid strokeDasharray="3 3" stroke="#F1F5F9" horizontal={false} />
               <XAxis type="number" tick={{ fontSize: 10 }} stroke="#CBD5E1" tickFormatter={(v) => `$${(v / 1000).toFixed(0)}k`} />
               <YAxis type="category" dataKey="Product" tick={{ fontSize: 10 }} stroke="#CBD5E1" width={90} />
-              <Tooltip formatter={(v: number) => formatCurrency(v)} contentStyle={{ borderRadius: 8, fontSize: 12 }} />
+              <Tooltip formatter={(v) => formatCurrency(Number(v))} contentStyle={{ borderRadius: 8, fontSize: 12 }} />
               <Bar dataKey="Sales" fill="#3B82F6" name="Revenue" radius={[0, 4, 4, 0]} />
               <Bar dataKey="Profit" fill="#10B981" name="Profit" radius={[0, 4, 4, 0]} />
             </BarChart>
@@ -74,7 +74,7 @@ export default function DiagnosisPage() {
                 labelLine={false}>
                 {pieData.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
               </Pie>
-              <Tooltip formatter={(v: number) => formatCurrency(v)} contentStyle={{ borderRadius: 8, fontSize: 12 }} />
+              <Tooltip formatter={(v) => formatCurrency(Number(v))} contentStyle={{ borderRadius: 8, fontSize: 12 }} />
             </PieChart>
           </ResponsiveContainer>
         </div>
