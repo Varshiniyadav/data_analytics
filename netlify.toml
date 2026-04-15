@@ -1,7 +1,7 @@
 [build]
   base = "data_analytics/frontend"
   command = "npm run build"
-  publish = "data_analytics/frontend/.next"
+  publish = ".next"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
